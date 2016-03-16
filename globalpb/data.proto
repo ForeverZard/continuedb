@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package globalpb;
+
+// NodeMeta is the meta data of the server node.
+message NodeMeta {
+    uint64 Id = 1;
+    string Host = 2;
+    string Port = 3;
+}
+
+// Timestamp represents the hlc timestamp.
+message Timestamp {
+    int64 WallTime = 1;
+    int32 LogicalTime = 2;
+}
+
+message Value {
+    bytes RawBytes = 1;
+    Timestamp Timestamp = 2;
+}
